@@ -6,7 +6,7 @@ Custom React enviroment that includes node-server, SaSS support, Redux, Jest, li
 
 # Setup
 
-1. git clone "" - install project
+1. git clone https://github.com/C-Birdwell/React-Enviroment.git - install project
 2. yarn install - install node dependencies
 3. Setup server for devolopment
    1. yarn start - starts node server (keep this running in a seperate terminal window)
