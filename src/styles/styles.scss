@@ -1,2 +1,8 @@
-@import './base/settings';
-@import './base/base';
+// Import each folder's import file
+// Import order determines hierarchical order
+
+@import './base/import';
+@import './subcomponents/import';
+@import './components/import';
+@import './screens/import';
+@import './template/import';

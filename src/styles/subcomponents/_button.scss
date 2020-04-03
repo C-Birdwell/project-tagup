@@ -1,0 +1,38 @@
+@import '../utils/colors';
+@import '../utils/mixins';
+
+.button {
+  background-color: $color-confirm;
+  border-radius: 25px;
+  border: 2px solid transparent;
+  width: 95%;
+  max-width: 200px;
+  height: 60px;
+  min-height: 60px;
+  align-self: center;
+  justify-content: center;
+
+  cursor: pointer;
+  transition: background-color 0.75s, transform 0.5s;
+  div {
+    justify-content: center;
+  }
+  p {
+    @include button-items;
+    flex: 0;
+  }
+
+  svg {
+    @include button-items;
+    align-self: center;
+  }
+
+  &.btn-text {
+    svg {
+      @include svg-with-text;
+    }
+  }
+  &:hover {
+    transform: scale(1.1);
+  }
+}

@@ -1,0 +1,89 @@
+@import './colors';
+
+@mixin alert-level($color, $dark: false) {
+  @if ($dark) {
+    background-color: $dark;
+    & .card-background svg {
+      fill: $color;
+    }
+    & .card-body {
+      background-color: rgba($dark, 0.85);
+      transition: background-color 0.75s;
+      & p {
+        color: #fff;
+      }
+      &:hover {
+        background-color: $dark;
+      }
+    }
+  } @else {
+    background-color: $color;
+  }
+  .card-body .card-content .svg-inline--fa,
+  .card-body .card-header .svg-inline--fa {
+    color: $color;
+  }
+  border-color: $color;
+}
+
+@mixin flex-layout {
+  display: flexbox;
+  display: -webkit-box;
+  display: -moz-box;
+  display: -ms-flexbox;
+  display: -webkit-flex;
+  display: flex;
+  flex: 1 0 0;
+  flex-direction: column;
+  box-sizing: border-box;
+  width: 100%;
+}
+
+@mixin svg-with-text {
+  flex: 0;
+  align-self: center;
+}
+
+@mixin button-items {
+  text-align: center;
+  color: $color-light-1;
+}
+
+%reset-background {
+  -webkit-appearance: none;
+  color: #000;
+  background-color: transparent;
+  border-width: 0px;
+  height: auto;
+}
+
+@mixin resetInput {
+  @extend %reset-background;
+  &:focus {
+    outline: none;
+  }
+}
+
+@mixin placeholder-custom($color) {
+  &::-webkit-input-placeholder {
+    color: $color;
+  }
+  &:-ms-input-placeholder {
+    color: $color;
+  }
+  &::placeholder {
+    color: $color;
+  }
+}
+
+@mixin dark-level {
+  &low {
+    @include alert-level($color-level-low, $color-dark-1);
+  }
+  &mid {
+    @include alert-level($color-level-mid, $color-dark-1);
+  }
+  &high {
+    @include alert-level($color-level-high, $color-dark-1);
+  }
+}

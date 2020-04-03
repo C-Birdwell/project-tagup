@@ -1,0 +1,94 @@
+@import '../utils/settings';
+@import '../utils/colors';
+@import '../utils/mixins';
+
+.card {
+  position: relative;
+  border: transparent 2px solid;
+  border-radius: 25px;
+  overflow: hidden;
+  align-items: center;
+  cursor: pointer;
+  justify-content: center;
+  min-height: 350px;
+  transition: transform 0.75s, background-color 0.75s;
+  height: auto;
+  margin: 0 1.5% 5vh 1.5%;
+  width: 95%;
+  max-width: 670px;
+  align-self: center;
+
+  .button {
+    align-self: flex-end;
+  }
+  &-delete-auth {
+    text-align: center;
+    .button {
+      align-self: center;
+    }
+  }
+
+  p {
+    color: #000;
+    font-size: $m-size;
+    margin: 0 0 20px 2.5%;
+  }
+  h2 {
+    color: #000;
+    font-size: $l-size;
+    margin: 0 0 20px 2.5%;
+  }
+  svg {
+    align-self: center;
+  }
+  &-header {
+    &-date {
+      text-align: right;
+      font-weight: bold;
+    }
+  }
+  &-body {
+    background-color: rgba($color: #fff, $alpha: 0.75);
+    border-radius: 25px;
+    position: relative;
+    z-index: 1;
+    padding: 10px 2.5%;
+  }
+  &-background {
+    position: absolute;
+    width: 90%;
+    height: 90%;
+    z-index: 0;
+    & svg {
+      fill: $color-light-1;
+      opacity: 0.25;
+      flex: 1;
+    }
+  }
+  &.level- {
+    &low {
+      @include alert-level($color-level-low);
+    }
+    &mid {
+      @include alert-level($color-level-mid);
+    }
+    &high {
+      @include alert-level($color-level-high);
+    }
+  }
+  &:hover {
+    background-color: #fff;
+    transform: scale(1.05);
+  }
+
+  &.columns-2 p {
+    @media (max-width: $mobile-breakpoint) {
+      font-size: $s-size;
+    }
+  }
+  &.columns-2 h2 {
+    @media (max-width: $mobile-breakpoint) {
+      font-size: $m-size;
+    }
+  }
+}

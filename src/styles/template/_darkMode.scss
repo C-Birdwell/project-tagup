@@ -1,0 +1,46 @@
+@import '../utils/colors';
+@import '../utils/mixins';
+
+.mode-dark {
+  background-color: $color-dark-1;
+  h2 {
+    color: #fff;
+  }
+  .selected p {
+    color: #fff;
+  }
+
+  .app {
+    header {
+      p {
+        color: #fff;
+      }
+    }
+    .dashboard .card.level- {
+      @include dark-level;
+    }
+  }
+
+  .form {
+    &.level- {
+      @include dark-level;
+    }
+  }
+
+  .button {
+    background-color: darken($color-confirm, 20%);
+    border-color: $color-confirm;
+  }
+
+  .search-bar {
+    background-color: darken($color-search, 20%);
+    input {
+      color: $color-light-1;
+      @include placeholder-custom(darken($color-light-1, 20%));
+    }
+    .icon {
+      background-color: darken($color-search, 20%);
+      border-left-color: #4682b4;
+    }
+  }
+}

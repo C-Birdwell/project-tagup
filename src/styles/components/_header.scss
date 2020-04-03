@@ -1,0 +1,12 @@
+header {
+  grid-area: header;
+  min-height: 30vh;
+  @media (max-height: 500px) {
+    min-height: 50vh;
+  }
+  p {
+    margin: 0 0 20px 0;
+  }
+  height: 100%;
+  padding: 0 0 20px 0;
+}

@@ -1,0 +1,27 @@
+@import '../utils/settings';
+
+.row {
+  flex-direction: row;
+}
+
+@for $i from 1 through 100 {
+  .col-#{$i} {
+    flex: $i;
+    flex-basis: 0;
+    flex-shrink: 0;
+  }
+}
+
+.center {
+  justify-content: center;
+}
+
+.content {
+  height: auto;
+}
+
+.mobile-hide {
+  @media (max-width: $desktop-breakpoint) {
+    display: none;
+  }
+}

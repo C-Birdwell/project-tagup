@@ -1,20 +1,32 @@
 import React from 'react'
 import ReactDOM from 'react-dom'
 import { Provider } from 'react-redux'
-import AppRouter from './routers/AppRouter'
+import GoogleFontLoader from 'react-google-font-loader'
+
+import Dashboard from './screens/Dashboard'
+import Header from './components/Header'
+import AlertForm from './components/AlertForm'
 import configureStore from './store/configureStore'
-import { addExpense } from './actions/expenses'
-import { setTextFilter } from './actions/filters'
-import getVisibleExpenses from './selectors/expenses'
 import 'normalize.css/normalize.css'
 import './styles/styles.scss'
-import 'react-dates/lib/css/_datepicker.css'
 
 const store = configureStore()
 
 const jsx = (
-  <Provider store={store}>
-    <AppRouter />
+  <Provider store={store} id="app">
+    <div className="app">
+      <GoogleFontLoader
+        fonts={[
+          {
+            font: 'Roboto',
+            weights: [400, '400i'],
+          },
+        ]}
+      />
+      <Header />
+      <Dashboard />
+      <AlertForm />
+    </div>
   </Provider>
 )
 

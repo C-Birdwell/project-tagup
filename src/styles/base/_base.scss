@@ -1,20 +1,37 @@
+@import '../utils/settings';
+@import '../utils/colors';
+@import '../utils/mixins';
+
 html {
   font-size: 62.5%;
+  overflow-x: hidden;
 }
 
 body {
+  @include flex-layout;
   font-family: Helvetica, Arial, sans-serif;
   font-size: $m-size;
+  min-height: 100vh;
+  position: relative;
+  font-family: 'Roboto', sans-serif;
+  clear: both;
+  transition: background-color 0.75s;
+  & * {
+    @include flex-layout;
+    height: 100%;
+  }
 }
 
-button {
-  cursor: pointer;
+input,
+textarea {
+  @include resetInput;
 }
 
-button:disabled {
-  cursor: default;
-}
-
-.is-active {
-  font-weight: bold;
+.app {
+  min-height: 100vh;
+  display: grid;
+  grid-template-rows: minmax(auto, 30vh) 4fr;
+  grid-template-areas:
+    'header'
+    'content';
 }
